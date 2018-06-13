@@ -1,7 +1,7 @@
 package ru.kpfu.itis.app.service.impl;
 
 import org.springframework.stereotype.Service;
-import ru.kpfu.itis.app.model.Client;
+import ru.kpfu.itis.app.model.entities.Client;
 import ru.kpfu.itis.app.repo.ClientRepo;
 import ru.kpfu.itis.app.service.ClientService;
 
@@ -17,13 +17,12 @@ public class ClientServiceImpl implements ClientService {
     }
 
     @Override
-    public List<Client> getAllClients() {
-        return repo.findAll();
+    public void addClient(Client c) {
+        repo.save(c);
     }
 
     @Override
-    public void addClient(String name, String phone, String email, String address) {
-        Client client = Client.builder().fullName(name).phoneNumber(phone).email(email).address(address).build();
-        repo.save(client);
+    public List<Client> getAllClients() {
+        return repo.findAll();
     }
 }

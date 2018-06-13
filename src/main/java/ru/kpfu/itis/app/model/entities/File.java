@@ -1,4 +1,4 @@
-package ru.kpfu.itis.app.model;
+package ru.kpfu.itis.app.model.entities;
 
 import lombok.*;
 
@@ -13,7 +13,7 @@ import javax.persistence.Id;
 @AllArgsConstructor
 @Builder
 @Entity
-public class Tariff {
+public class File {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,7 +21,5 @@ public class Tariff {
 
     private String name;
 
-    private Integer price;
-
-    private String description;
+    private String url;
 }

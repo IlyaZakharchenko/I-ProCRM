@@ -1,7 +1,11 @@
 package ru.kpfu.itis.app.repo;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import ru.kpfu.itis.app.model.User;
+import ru.kpfu.itis.app.model.entities.AppUser;
 
-public interface UserRepo extends JpaRepository<User, Long> {
+import java.util.Optional;
+
+public interface UserRepo extends JpaRepository<AppUser, Long> {
+    Optional<AppUser> getOneByLogin(String login);
+    Optional<AppUser> getOneByUid(String uid);
 }

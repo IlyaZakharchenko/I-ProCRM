@@ -1,18 +1,16 @@
-package ru.kpfu.itis.app.model;
+package ru.kpfu.itis.app.model.entities;
 
 import lombok.*;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-
 @Entity
-public class Client {
+public class Staff {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,16 +18,17 @@ public class Client {
 
     private String fullName;
 
+    private String experience;
+
+    private String position;
+
     private String phoneNumber;
 
     private String email;
 
-    private String address;
-
-    @OneToMany(mappedBy = "client")
-    private List<Contract> contracts;
+    private Integer salary;
 
     @OneToOne
     @JoinColumn(name = "user_id", referencedColumnName = "id")
-    private User user;
+    private AppUser appUser;
 }

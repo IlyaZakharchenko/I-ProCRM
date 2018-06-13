@@ -1,11 +1,13 @@
-package ru.kpfu.itis.app.model;
+package ru.kpfu.itis.app.model.entities;
 
 import lombok.*;
+import org.hibernate.annotations.Type;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.util.Date;
 
 @Getter
 @Setter
@@ -13,13 +15,17 @@ import javax.persistence.Id;
 @AllArgsConstructor
 @Builder
 @Entity
-public class File {
+public class News {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String name;
+    private String header;
 
-    private String url;
+    @Type(type = "text")
+    private String context;
+
+    @Type(type = "date")
+    private Date date;
 }

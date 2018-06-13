@@ -1,12 +1,12 @@
 package ru.kpfu.itis.app.service;
 
-import ru.kpfu.itis.app.model.Client;
+import ru.kpfu.itis.app.model.entities.Client;
 
 import java.util.List;
 
 public interface ClientService {
 
-    List<Client> getAllClients();
+    void addClient(Client c);
 
-    void addClient(String name, String phone, String email, String address);
+    List<Client> getAllClients();
 }

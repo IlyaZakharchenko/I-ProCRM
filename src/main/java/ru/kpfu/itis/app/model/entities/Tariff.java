@@ -1,4 +1,4 @@
-package ru.kpfu.itis.app.model;
+package ru.kpfu.itis.app.model.entities;
 
 import lombok.*;
 
@@ -13,13 +13,15 @@ import javax.persistence.Id;
 @AllArgsConstructor
 @Builder
 @Entity
-public class IPAddress {
+public class Tariff {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String ipAddress;
+    private String name;
 
-    private boolean isOccupied;
+    private Integer price;
+
+    private String description;
 }

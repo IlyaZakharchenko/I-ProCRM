@@ -1,4 +1,4 @@
-package ru.kpfu.itis.app.model;
+package ru.kpfu.itis.app.model.entities;
 
 import lombok.*;
 import ru.kpfu.itis.app.model.enums.ApplicationStatus;
@@ -6,11 +6,10 @@ import ru.kpfu.itis.app.model.enums.ApplicationStatus;
 import javax.persistence.*;
 import java.util.List;
 
-@Getter
-@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@Data
 @Entity
 public class Application {
 
